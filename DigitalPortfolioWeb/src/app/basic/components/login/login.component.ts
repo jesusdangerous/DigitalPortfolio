@@ -16,13 +16,12 @@ export class LoginComponent {
 	  private authService: AuthService,
 	  private notification: NzNotificationService,
 	  private router: Router,
-	){
-    
+	){ 
   }
 
 	ngOnInit(){
 		this.validateForm = this.fb.group({
-			username : [null, [Validators.required]],
+			userName : [null, [Validators.required]],
 			password : [null, [Validators.required]],
 		})
 	}

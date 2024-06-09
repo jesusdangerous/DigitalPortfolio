@@ -22,7 +22,7 @@ public class AuthServiceImpl implements AuthService{
         user.setLastname(signupRequestDTO.getLastname());
         user.setEmail(signupRequestDTO.getEmail());
         user.setPhone(signupRequestDTO.getPhone());
-        user.setPassword((new BCryptPasswordEncoder().encode(signupRequestDTO.getPassword())));
+        user.setPassword(new BCryptPasswordEncoder().encode(signupRequestDTO.getPassword()));
 
         user.setRole(UserRole.CLIENT);
 

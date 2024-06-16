@@ -1,0 +1,51 @@
+<div class="bg">
+
+    <div class="parent">
+        <div class="child">
+            <div nz-col>
+                <h1 style="margin-left: 75px">Рекрутер</h1>
+              </div>
+
+              <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()">
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Неверный ввод">
+                        <input class = "item-form" nz-input placeholder="Почта" formControlName="email" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Неверный ввод">
+                        <input class = "item-form" nz-input type="password" placeholder="Пароль" formControlName="password" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Неверный ввод">
+                        <input class = "item-form" nz-input type="password" placeholder="Повторите пароль" formControlName="checkPassword" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Неверный ввод">
+                        <input class = "item-form" nz-input placeholder="Имя" formControlName="name" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Неверный ввод">
+                        <input class = "item-form" nz-input placeholder="Фамилия" formControlName="lastname" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Неверный ввод">
+                        <input class = "item-form" nz-input placeholder="Телефон" formControlName="phone" id="email" />
+                    </nz-form-control>
+                </nz-form-item>
+
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Продолжить</button>
+                  <a routerLink="/login">Войти сейчас</a>
+              </form>
+        </div>
+    </div>
+</div>

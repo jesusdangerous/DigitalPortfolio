@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  </head>
+  <div *ngIf="!isClientLoggedIn && !isCompanyLoggedIn">
+    <nz-header class="main-header" nz-row nzType="flex" style="background-color: #D4DCE5">
+      <div>
+        <h2 class = "logo">SAF | PORTFOLIO</h2>
+      </div>
+      <div class="nav-links">
+        <a nz-button nzType="link" class="enter" routerLink="/login" routerLinkActive="active">Войти</a>
+        <a nz-button nzType="link" class="registration" routerLink="/register" routerLinkActive="active">Регистрация</a>
+      </div>
+    </nz-header>
+  </div>
+
+  <div *ngIf="isClientLoggedIn">
+    <nz-header class="main-header" nz-row nzType="flex" style="background-color: #D4DCE5">
+      <div>
+      
+        <h2 class="logo">SAF | PORTFOLIO</h2>
+    </div>
+    <div class="nav-links">
+      <a class="enter" nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Поиск</a>
+      <a class="enter" nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Митапы</a>
+      <a class="enter" nz-button nzType="link" (click)="logout()" routerLinkActive="active">Выйти</a>
+    </div>
+    </nz-header>
+
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" routerLink="/client/dashboard" routerLinkActive="active">Поиск</a>
+        </li>
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" routerLink="/client/bookings" routerLinkActive="active">Митапы</a>
+        </li>
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" (click)="logout()" routerLinkActive="active">Выйти</a>
+        </li>
+      </ul>
+    </nz-sider>
+  </div>
+
+  <div *ngIf="isCompanyLoggedIn">
+    <nz-header class="main-header" nz-row nzType="flex" style="background-color: #D4DCE5">
+      <div>
+        <h2 class="logo">SAF | PORTFOLIO</h2>
+      </div>
+      <div class="nav-links">
+        <a class="enter" nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Предложения</a>
+        <a class="enter" nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Добавить портфолио</a>
+        <a class="enter" nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Моё портфолио</a>
+        <a class="enter" nz-button nzType="link" (click)="logout()" routerLinkActive="active">Выйти</a>
+      </div>
+    </nz-header>
+
+    <nz-sider nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+      <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" routerLink="/company/dashboard" routerLinkActive="active">Предложения</a>
+        </li>
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" routerLink="/company/ad" routerLinkActive="active">Добавить портфолио</a>
+        </li>
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" routerLink="/company/ads" routerLinkActive="active">Моё портфолио</a>
+        </li>
+        <li nz-menu-item>
+          <a class="enter" nz-button nzType="link" (click)="logout()" routerLinkActive="active">Выйти</a>
+        </li>
+      </ul>
+    </nz-sider>
+  </div>
+
+  <router-outlet></router-outlet>
+</html>  
